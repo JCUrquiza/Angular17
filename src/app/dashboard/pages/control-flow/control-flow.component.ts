@@ -1,5 +1,8 @@
 import { Component, signal } from '@angular/core';
 
+
+type Grade = 'A' | 'B' | 'F';
+
 @Component({
   standalone: true,
   imports: [],
@@ -9,6 +12,7 @@ import { Component, signal } from '@angular/core';
 export default class ControlFlowComponent {
 
   public showContent = signal(false);
+  public grade = signal<Grade>('A');
 
   public toggleContent() {
     this.showContent.update( value => !value );

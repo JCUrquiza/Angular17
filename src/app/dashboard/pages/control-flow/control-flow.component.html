@@ -1,11 +1,8 @@
-
 <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
 
   <!-- ngIf @if -->
   <div class="bg-white rounded shadow p-10">
-
     <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
-
     <button class="p-2 bg-blue-500 rounded text-white" (click)="toggleContent()">
       Click me!!
     </button>
@@ -19,5 +16,23 @@
   </div>
 
 
+  <!-- ngSwitch @switch -->
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-3xl">{{ grade() }}</h2>
+
+    @switch (grade()) {
+      @case ('A') {
+        <p>Arriba de 90</p>
+      }
+      @case ('B') {
+        <p>Arriba de 80</p>
+      }
+      @default {
+        <p>Reprobado</p>
+      }
+    }
+  </div>
+
 </section>
+
 
