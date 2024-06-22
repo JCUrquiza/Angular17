@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 
@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs';
   standalone: true,
   imports: [ TitleComponent ],
   template: `
-    <app-title title="User" />
+    <app-title [title]=titleLabel() />
 
     @if ( user() ) {
       <section>
@@ -45,4 +45,15 @@ export default class UserComponent {
     )
   )
 
+  public titleLabel = computed(
+    () => {
+      if( this.user() ) {
+        return `Información del usuario: ${ this.user()?.first_name } ${ this.user()?.last_name }`
+      }
+      return 'Información del usuario';
+    }
+  );
+
 }
+
+
