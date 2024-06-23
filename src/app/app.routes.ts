@@ -46,11 +46,15 @@ export const routes: Routes = [
         title: 'View Transition 2',
         loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component2')
       },
-
       {
         path: 'inputs-outputs',
         title: 'Inputs Outputs',
         loadComponent: () => import('./dashboard/pages/input-output/input-output.component')
+      },
+      {
+        path: 'Material',
+        title: 'Angular Material',
+        loadComponent: () => import('./dashboard/pages/material/material.component')
       },
 
       {
